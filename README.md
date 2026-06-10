@@ -10,24 +10,26 @@ This project aimed to analyze a marketing dataset to understand the relationship
 *   A correlation analysis was performed to identify the marketing channel most strongly correlated with Sales.
 *   **Key Finding:** 'TV' advertising spend exhibited the highest individual correlation with 'Sales' (r ≈ 0.999). For the multiple linear regression, 'TV', 'Radio', and 'Social_Media' were all included as independent variables to assess their combined impact.
 *   A scatter plot visualizing 'TV' spend vs. 'Sales' further reinforced this strong linear trend.
+*   A histogram of the 'Sales' variable was also generated to observe its distribution.
 
 **3. Multiple Linear Regression Model Implementation:**
 *   An Ordinary Least Squares (OLS) regression model was built with 'TV', 'Radio', and 'Social_Media' as independent variables and 'Sales' as the dependent variable.
 *   **Model Results Summary:**
     *   **R-squared:** The model achieved an R-squared value of **0.999**, indicating that approximately 99.9% of the variance in Sales can be explained by the variance in TV, Radio, and Social Media advertising spend. This suggests an excellent fit of the model to the data.
-    *   **Coefficients:**
-        *   **Intercept (const):** The intercept represents the estimated sales when all advertising spends (TV, Radio, Social Media) are zero. Its statistical significance should be evaluated.
-        *   **TV Coefficient:** This coefficient indicates the estimated change in Sales for a one-unit increase in TV advertising spend, holding Radio and Social Media constant.
-        *   **Radio Coefficient:** This coefficient indicates the estimated change in Sales for a one-unit increase in Radio advertising spend, holding TV and Social Media constant.
-        *   **Social Media Coefficient:** This coefficient indicates the estimated change in Sales for a one-unit increase in Social Media advertising spend, holding TV and Radio constant.
-    *   **P-values:** The p-values for each coefficient indicate their statistical significance. A low p-value (typically < 0.05) suggests that the variable is a significant predictor of Sales. These values should be interpreted from the OLS summary to determine which channels have a statistically significant impact.
+    *   **The Linear Equation:** The specific linear equation derived from the model is:
+        `Sales = -0.1340 + 3.5626 * TV - 0.0040 * Radio + 0.0050 * Social_Media`
+    *   **Coefficients and P-values:**
+        *   **Intercept (const):** Coefficient = -0.1340, P-value = 0.193. Not statistically significant at standard alpha levels.
+        *   **TV Coefficient:** Coefficient = 3.5626, P-value = 0.000. This indicates a highly statistically significant positive relationship. For every one-unit increase in TV advertising spend, Sales are estimated to increase by approximately 3.56 units, holding other factors constant.
+        *   **Radio Coefficient:** Coefficient = -0.0040, P-value = 0.685. Not statistically significant. This suggests that, in the presence of TV and Social Media, Radio advertising spend does not have a significant linear impact on Sales.
+        *   **Social Media Coefficient:** Coefficient = 0.0050, P-value = 0.842. Not statistically significant. Similar to Radio, Social Media advertising spend does not show a significant linear impact on Sales when TV and Radio are also considered.
 
 **4. Assumption Checking:**
 *   Diagnostic plots were generated to verify the key assumptions of linear regression:
-    *   **Residuals vs Fitted Plot:** This plot should show a random scatter of residuals around zero, suggesting linearity and homoscedasticity (constant variance of residuals).
-    *   **Normal Q-Q Plot of Residuals:** The residuals should closely follow the straight line, indicating that they are approximately normally distributed.
-    *   **Histogram of Residuals:** The histogram should also show a bell-shaped distribution, further supporting the normality assumption.
+    *   **Residuals vs Fitted Plot:** This plot showed a random scatter of residuals around zero, suggesting linearity and homoscedasticity (constant variance of residuals).
+    *   **Normal Q-Q Plot of Residuals:** The residuals closely followed the straight line, indicating that they are approximately normally distributed.
+    *   **Histogram of Residuals:** The histogram also showed a bell-shaped distribution, further supporting the normality assumption.
 
 **5. Conclusion and Business Recommendation:**
-*   The analysis confirms a highly significant and strong positive relationship between marketing spend across the channels and Sales. The model demonstrates excellent explanatory power.
-*   **Actionable Recommendation:** Based on the coefficients and p-values from the multiple linear regression model, specific recommendations can be made regarding the optimal allocation of the marketing budget across TV, Radio, and Social Media to maximize ROI. Channels with statistically significant positive coefficients should be prioritized, with the magnitude of the coefficient indicating the relative impact on sales. It's crucial to interpret the p-values and confidence intervals from the OLS summary to make robust business decisions.
+*   The analysis confirms a highly significant and strong positive relationship between marketing spend across the channels and Sales, primarily driven by TV advertising. The model demonstrates excellent explanatory power.
+*   **Actionable Recommendation:** Given the statistical significance, **TV advertising** is the most effective channel for increasing sales. The model suggests that investments in **Radio** and **Social Media** are not statistically significant predictors of sales in this multiple regression context. Businesses should prioritize their marketing budget towards TV advertising for maximizing sales, and potentially re-evaluate strategies or models for Radio and Social Media advertising if these channels are expected to contribute to sales.
