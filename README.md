@@ -1,28 +1,31 @@
-# Simple Linear Regression Evaluation
+Regression Equation
 
-## Project Overview
-This project analyzes the relationship between marketing expenditure and sales using Simple Linear Regression.
+Sales = -0.1325 + 3.5615 × TV
 
-## Dataset Features
-- TV
-- Radio
-- Social_Media
-- Sales
+Interpretation
 
-## Steps Performed
-1. Data loading and exploration
-2. Missing value treatment
-3. Descriptive statistics
-4. Correlation analysis
-5. Heatmap visualization
-6. Simple Linear Regression model
-7. Residual analysis
-8. Q-Q plot diagnostics
+The intercept (-0.1325) represents the predicted Sales when TV advertising expenditure is zero.
 
-## Key Findings
-- TV advertising showed the strongest correlation with Sales.
-- The regression model achieved an R-squared value of 0.999.
-- TV advertising expenditure was a statistically significant predictor of Sales.
+The TV coefficient (3.5615) indicates that for every one-unit increase in TV advertising expenditure, Sales increase by approximately 3.56 units.
 
-## Conclusion
-TV advertising has the greatest impact on sales performance and should receive priority in marketing budget allocation.
+Model Performance
+
+R-squared = 0.999
+
+This indicates that approximately 99.9% of the variation in Sales is explained by TV advertising expenditure.
+
+Assumption Checking
+
+The following diagnostic plots were used:
+
+- Residuals vs Fitted Plot (Linearity and Homoscedasticity)
+- Histogram of Residuals
+- Q-Q Plot
+
+The Residuals vs Fitted plot showed no clear pattern, suggesting constant variance of residuals (homoscedasticity).
+
+The Q-Q Plot indicated that residuals were approximately normally distributed.
+
+Business Recommendation
+
+TV advertising is the strongest predictor of Sales and should receive the highest priority when allocating marketing budgets.
